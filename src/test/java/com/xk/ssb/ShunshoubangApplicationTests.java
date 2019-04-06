@@ -16,13 +16,16 @@ public class ShunshoubangApplicationTests {
 	@Autowired
 	private UserMapper userMapper;
 
+//	@Test
+//	public  void  testInsert(){
+//		User user = new User("xk", "123456789", (byte) 0);
+//		userMapper.insertSelective(user);
+//	}
+
 	@Test
-	public  void  testInsert(){
-		User user = new User("xk", "123456789", (byte) 0);
-		userMapper.insertSelective(user);
+	public void get(){
+		 userMapper.selectByPrimaryKey(1L);
 	}
-
-
 
 
 	@Test

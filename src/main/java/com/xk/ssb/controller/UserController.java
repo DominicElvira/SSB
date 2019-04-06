@@ -15,4 +15,9 @@ public class UserController {
     public int addUser() {
         return userService.addUser();
     }
+
+    @RequestMapping(value = "/get")
+    public User getUser() {
+        return userService.getUser();
+    }
 }

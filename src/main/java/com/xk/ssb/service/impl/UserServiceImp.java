@@ -14,7 +14,13 @@ public class UserServiceImp implements UserService {
 
     @Override
     public int addUser() {
-        User user = new User("xk", "123456789", (byte) 0);
+        User user = new User("xk", "123456789",  0);
         return userMapper.insertSelective(user);
     }
+
+    @Override
+    public User getUser() {
+        return userMapper.selectByPrimaryKey(1L);
+    }
+
 }

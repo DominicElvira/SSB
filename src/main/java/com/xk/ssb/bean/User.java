@@ -1,5 +1,6 @@
 package com.xk.ssb.bean;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class User {
@@ -9,13 +10,13 @@ public class User {
 
     private String password;
 
-    private Byte userSex;
+    private Integer userSex;
 
     private String nickName;
 
-    private Date cerateTime;
+    private Timestamp cerateTime;
 
-    private Date updateTime;
+    private Timestamp updateTime;
 
     public Long getId() {
         return id;
@@ -41,11 +42,11 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
-    public Byte getUserSex() {
+    public Integer getUserSex() {
         return userSex;
     }
 
-    public void setUserSex(Byte userSex) {
+    public void setUserSex(Integer userSex) {
         this.userSex = userSex;
     }
 
@@ -61,7 +62,7 @@ public class User {
         return cerateTime;
     }
 
-    public void setCerateTime(Date cerateTime) {
+    public void setCerateTime(Timestamp cerateTime) {
         this.cerateTime = cerateTime;
     }
 
@@ -69,13 +70,23 @@ public class User {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(Timestamp updateTime) {
         this.updateTime = updateTime;
     }
 
-    public User(String username, String password, Byte userSex) {
+    public User(String username, String password, Integer userSex) {
         this.username = username;
         this.password = password;
         this.userSex = userSex;
+    }
+
+    public User(Long id, String username, String password, Integer userSex, String nickName, Timestamp cerateTime, Timestamp updateTime) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.userSex = userSex;
+        this.nickName = nickName;
+        this.cerateTime = cerateTime;
+        this.updateTime = updateTime;
     }
 }
