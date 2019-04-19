@@ -9,9 +9,10 @@
     <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
     <result column="cerate_time" jdbcType="TIMESTAMP" property="cerateTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="flag" jdbcType="INTEGER" property="flag" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, userName, passWord, user_sex, nick_name, cerate_time, update_time
+    id, userName, passWord, user_sex, nick_name, cerate_time, update_time,flag
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -19,6 +20,14 @@
     from users
     where id = #{id,jdbcType=BIGINT}
   </select>
+
+  <select id="selectByParam" parameterType="HashMap"  resultMap="BaseResultMap">
+      SELECT
+    <include refid="Base_Column_List" />
+      FROM users
+      WHERE userName =#{userName} AND passWord =#{passWord}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from users
     where id = #{id,jdbcType=BIGINT}
@@ -55,6 +64,9 @@
       <if test="updateTime != null">
         update_time,
       </if>
+      <if test="flag != null">
+        flag,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -77,6 +89,9 @@
       </if>
       <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>

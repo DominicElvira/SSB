@@ -18,6 +18,17 @@ public class User {
 
     private Timestamp updateTime;
 
+    private Integer flag;
+
+    public void setFlag(Integer flag) {
+        this.flag = flag;
+    }
+
+    public Integer getFlag() {
+
+        return flag;
+    }
+
     public Long getId() {
         return id;
     }
@@ -74,13 +85,13 @@ public class User {
         this.updateTime = updateTime;
     }
 
-    public User(String username, String password, Integer userSex) {
+    public User(String username, String password, String nickName) {
         this.username = username;
         this.password = password;
-        this.userSex = userSex;
+        this.nickName = nickName;
     }
 
-    public User(Long id, String username, String password, Integer userSex, String nickName, Timestamp cerateTime, Timestamp updateTime) {
+    public User(Long id, String username, String password, Integer userSex, String nickName, Timestamp cerateTime, Timestamp updateTime, Integer flag) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -88,5 +99,6 @@ public class User {
         this.nickName = nickName;
         this.cerateTime = cerateTime;
         this.updateTime = updateTime;
+        this.flag = flag;
     }
 }
