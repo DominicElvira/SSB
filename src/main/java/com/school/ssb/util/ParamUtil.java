@@ -1,4 +1,4 @@
-package com.xk.ssb.util;
+package com.school.ssb.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;

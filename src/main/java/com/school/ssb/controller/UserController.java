@@ -1,7 +1,6 @@
-package com.xk.ssb.controller;
+package com.school.ssb.controller;
 
-import com.xk.ssb.bean.User;
-import com.xk.ssb.service.UserService;
+import com.school.ssb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

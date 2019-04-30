@@ -1,6 +1,6 @@
-package com.xk.ssb.service;
+package com.school.ssb.service;
 
-import com.xk.ssb.bean.User;
+import com.school.ssb.bean.User;
 
 public interface UserService {
     int addUser(String schoolNo, String password, String nickName);

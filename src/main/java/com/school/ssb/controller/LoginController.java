@@ -1,10 +1,8 @@
-package com.xk.ssb.controller;
+package com.school.ssb.controller;
 
-import com.xk.ssb.bean.User;
-import com.xk.ssb.service.LoginService;
-import com.xk.ssb.util.ParamUtil;
+import com.school.ssb.service.LoginService;
+import com.school.ssb.util.ParamUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

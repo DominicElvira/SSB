@@ -1,6 +1,6 @@
-package com.xk.ssb.mapperDao;
+package com.school.ssb.mapperDao;
 
-import com.xk.ssb.bean.User;
+import com.school.ssb.bean.User;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;

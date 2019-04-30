@@ -1,6 +1,8 @@
 #服务器的端口的配置
   server:
-    port: 8018
+    port: 8080
+    servlet:
+      context-path: /ssb
 #应用的名称（spring cloud里面会用到，暂时不用理会）
   spring:
 #    application:
@@ -35,4 +37,4 @@
        config-location: classpath:mybatis/mybatis-config.xml
 #       mapper-locations: classpath:com/xk/ssb/mapperDao/mapper/*.xml
        mapper-locations: classpath:/mybatis/mapper/*.xml
-       type-aliases-package: com.xk.ssb.bean
+       type-aliases-package: com.school.ssb.bean

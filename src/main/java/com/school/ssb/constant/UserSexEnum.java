@@ -1,4 +1,4 @@
-package com.xk.ssb.constant;
+package com.school.ssb.constant;
 
 public enum  UserSexEnum {
     MAN, WOMAN

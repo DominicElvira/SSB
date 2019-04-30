@@ -1,4 +1,4 @@
-package com.xk.ssb.bean;
+package com.school.ssb.bean;
 
 import java.sql.Timestamp;
 import java.util.Date;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xk.ssb.mapperDao.UserMapper">
-  <resultMap id="BaseResultMap" type="com.xk.ssb.bean.User">
+<mapper namespace="com.school.ssb.mapperDao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.school.ssb.bean.User">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="userName" jdbcType="VARCHAR" property="username" />
     <result column="passWord" jdbcType="VARCHAR" property="password" />
@@ -32,7 +32,7 @@
     delete from users
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xk.ssb.bean.User">
+  <insert id="insert" parameterType="com.school.ssb.bean.User">
     insert into users (id, userName, passWord, 
       user_sex, nick_name, cerate_time, 
       update_time)
@@ -40,7 +40,7 @@
       #{userSex,jdbcType=TINYINT}, #{nickName,jdbcType=VARCHAR}, #{cerateTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.xk.ssb.bean.User">
+  <insert id="insertSelective" parameterType="com.school.ssb.bean.User">
     insert into users
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -95,7 +95,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xk.ssb.bean.User">
+  <update id="updateByPrimaryKeySelective" parameterType="com.school.ssb.bean.User">
     update users
     <set>
       <if test="username != null">
@@ -119,7 +119,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xk.ssb.bean.User">
+  <update id="updateByPrimaryKey" parameterType="com.school.ssb.bean.User">
     update users
     set userName = #{username,jdbcType=VARCHAR},
       passWord = #{password,jdbcType=VARCHAR},

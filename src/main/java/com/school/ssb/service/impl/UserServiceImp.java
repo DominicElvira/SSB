@@ -1,8 +1,8 @@
-package com.xk.ssb.service.impl;
+package com.school.ssb.service.impl;
 
-import com.xk.ssb.bean.User;
-import com.xk.ssb.mapperDao.UserMapper;
-import com.xk.ssb.service.UserService;
+import com.school.ssb.bean.User;
+import com.school.ssb.mapperDao.UserMapper;
+import com.school.ssb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

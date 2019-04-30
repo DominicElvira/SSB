@@ -1,8 +1,6 @@
-package com.xk.ssb;
+package com.school.ssb;
 
-import com.xk.ssb.bean.User;
-import com.xk.ssb.constant.UserSexEnum;
-import com.xk.ssb.mapperDao.UserMapper;
+import com.school.ssb.mapperDao.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

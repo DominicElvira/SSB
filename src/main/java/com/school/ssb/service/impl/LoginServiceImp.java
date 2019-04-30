@@ -1,11 +1,11 @@
-package com.xk.ssb.service.impl;
+package com.school.ssb.service.impl;
 
-import com.xk.ssb.bean.User;
-import com.xk.ssb.constant.URL;
-import com.xk.ssb.service.LoginService;
-import com.xk.ssb.service.UserService;
-import com.xk.ssb.util.HttpUtil;
-import com.xk.ssb.util.ParamUtil;
+import com.school.ssb.bean.User;
+import com.school.ssb.constant.URL;
+import com.school.ssb.service.LoginService;
+import com.school.ssb.service.UserService;
+import com.school.ssb.util.HttpUtil;
+import com.school.ssb.util.ParamUtil;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.methods.HttpGet;
@@ -16,7 +16,6 @@ import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.apache.commons.lang3.StringUtils;
 

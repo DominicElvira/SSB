@@ -1,4 +1,4 @@
-package com.xk.ssb.service;
+package com.school.ssb.service;
 
 import java.util.Map;
 
