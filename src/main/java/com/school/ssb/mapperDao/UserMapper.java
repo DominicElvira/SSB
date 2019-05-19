@@ -1,11 +1,11 @@
 package com.school.ssb.mapperDao;
 
 import com.school.ssb.bean.User;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.Map;
 
-@Component
+@Repository
 public interface UserMapper {
     int deleteByPrimaryKey(Long id);
 
