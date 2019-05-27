@@ -15,10 +15,13 @@
     <result column="cerate_time" jdbcType="TIMESTAMP" property="cerateTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="taskpattern" jdbcType="INTEGER" property="taskpattern" />
+    <result column="nick_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_imgsrc" jdbcType="VARCHAR" property="userImgSrc" />
+    <result column="money" jdbcType="INTEGER" property="money" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, userid, tasktype,taskpattern, content_public, content_private, img_src, address, deadline,
-    task_status, execute_userid, cerate_time, update_time
+    tasks.id id, userid, tasktype,taskpattern, content_public, content_private, img_src, address, deadline,
+    task_status, execute_userid, tasks.cerate_time, tasks.update_time,money
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
@@ -179,16 +182,16 @@
 
   <select id="findTaskRecommend" parameterType="com.school.ssb.bean.Task" resultMap="BaseResultMap">
     select
-    <include refid="Base_Column_List" />
-    from tasks
+    <include refid="Base_Column_List" />,users.user_imgsrc,users.nick_name
+    from tasks,users WHERE  users.id = tasks.userid
     ORDER BY cerate_time desc
   </select>
     
     <select id="selectTasksByParam" parameterType="com.school.ssb.bean.Task" resultMap="BaseResultMap">
         SELECT 
-            <include refid="Base_Column_List"/>
-        FROM tasks
-        WHERE 1=1
+            <include refid="Base_Column_List"/>,users.user_imgsrc,users.nick_name
+      FROM tasks,users
+        WHERE 1=1 and users.id = tasks.userid
         <if test="userid != null">
            AND userid = #{userid,jdbcType=BIGINT}
         </if>

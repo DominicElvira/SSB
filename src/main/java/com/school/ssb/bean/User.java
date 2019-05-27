@@ -20,6 +20,16 @@ public class User {
 
     private Integer flag;
 
+    private String imgSrc;
+
+    public String getImgSrc() {
+        return imgSrc;
+    }
+
+    public void setImgSrc(String imgSrc) {
+        this.imgSrc = imgSrc;
+    }
+
     public void setFlag(Integer flag) {
         this.flag = flag;
     }

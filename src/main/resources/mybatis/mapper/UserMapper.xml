@@ -10,9 +10,10 @@
     <result column="cerate_time" jdbcType="TIMESTAMP" property="cerateTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="flag" jdbcType="INTEGER" property="flag" />
+    <result column="user_imgsrc" jdbcType="VARCHAR" property="imgSrc" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, userName, passWord, user_sex, nick_name, cerate_time, update_time,flag
+    id, userName, passWord, user_sex, nick_name, cerate_time, update_time,flag,user_imgsrc
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 

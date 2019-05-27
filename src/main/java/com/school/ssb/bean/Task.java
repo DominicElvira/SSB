@@ -29,6 +29,36 @@ public class Task extends BaseEntity{
 
     private Date updateTime;
 
+    private String userImgSrc;
+
+    private String userName;
+
+    private int money;
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public String getUserImgSrc() {
+        return userImgSrc;
+    }
+
+    public void setUserImgSrc(String userImgSrc) {
+        this.userImgSrc = userImgSrc;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public Long getId() {
         return id;
     }
