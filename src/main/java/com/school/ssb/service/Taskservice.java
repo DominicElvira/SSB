@@ -24,4 +24,6 @@ public interface Taskservice {
     public List<Task> getRecommendList(Task task);
 
     public List<Task> getTasksType(Task task);
+
+    Map<String,Object> doTask(Task task);
 }

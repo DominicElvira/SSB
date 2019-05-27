@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -46,5 +47,17 @@ public class TaskServiceImp implements Taskservice {
     @Override
     public List<Task> getTasksType(Task task) {
         return taskMapper.selectTasksByParam(task);
+    }
+
+    @Override
+    public Map<String, Object> doTask(Task task) {
+        Map<String,Object> map = new HashMap<String,Object>();
+        //查找该任务是否已经被抢
+        Task nowTask = taskMapper.selectByPrimaryKey(task.getId());
+        if(nowTask.getTaskStatus() == 0){
+            //taskMapper.updateByPrimaryKeySelective(task);
+            map.put("api_status", "1");
+        }
+        return map;
     }
 }
