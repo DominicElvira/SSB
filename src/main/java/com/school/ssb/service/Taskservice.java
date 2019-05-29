@@ -25,5 +25,7 @@ public interface Taskservice {
 
     public List<Task> getTasksType(Task task);
 
+    Task getTask(Long id);
+
     Map<String,Object> doTask(Task task);
 }

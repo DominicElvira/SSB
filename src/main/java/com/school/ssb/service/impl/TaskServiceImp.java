@@ -50,12 +50,18 @@ public class TaskServiceImp implements Taskservice {
     }
 
     @Override
+    public Task getTask(Long id) {
+        return taskMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
     public Map<String, Object> doTask(Task task) {
         Map<String,Object> map = new HashMap<String,Object>();
         //查找该任务是否已经被抢
         Task nowTask = taskMapper.selectByPrimaryKey(task.getId());
         if(nowTask.getTaskStatus() == 0){
-            //taskMapper.updateByPrimaryKeySelective(task);
+            task.setTaskStatus(1);
+            taskMapper.updateByPrimaryKeySelective(task);
             map.put("api_status", "1");
         }
         return map;

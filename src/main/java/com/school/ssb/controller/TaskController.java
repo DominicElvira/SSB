@@ -2,7 +2,9 @@ package com.school.ssb.controller;
 
 import com.school.ssb.bean.PageEntity;
 import com.school.ssb.bean.Task;
+import com.school.ssb.bean.User;
 import com.school.ssb.service.impl.TaskServiceImp;
+import com.school.ssb.service.impl.UserServiceImp;
 import com.sun.jmx.snmp.tasks.TaskServer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,9 @@ import java.util.Map;
 public class TaskController {
     @Autowired
     private TaskServiceImp taskService;
+
+    @Autowired
+    private UserServiceImp userServiceImp;
 
     /**
      *
@@ -51,6 +56,27 @@ public class TaskController {
     public ResponseEntity getTasksByType(@RequestBody Task task) {
         List<Task> taskList = taskService.getTasksType(task);
         return new ResponseEntity(new PageEntity<>(taskList), HttpStatus.OK);
+    }
+
+    /**
+     * 获取任务详情
+     * @param task
+     * @return
+     */
+    @PostMapping(value = "/g/getTask")
+    public Task getTask(@RequestBody Task task) {
+        Task task1 = taskService.getTask(task.getId());
+        //获取发布人信息
+        User user1 = userServiceImp.selectById(task1.getUserid());
+        task1.setUserName(user1.getNickName());
+        task1.setUserImgSrc(user1.getImgSrc());
+
+        if(task1.getExecuteUserid() != null){
+            User executeUser = userServiceImp.selectById(task1.getExecuteUserid());
+            task1.setExecuteUserName(executeUser.getNickName());
+            task1.setExecuteUserImgSrc(executeUser.getImgSrc());
+        }
+        return task1;
     }
 
     /**

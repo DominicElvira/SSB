@@ -101,7 +101,7 @@ public class User {
         this.nickName = nickName;
     }
 
-    public User(Long id, String username, String password, Integer userSex, String nickName, Timestamp cerateTime, Timestamp updateTime, Integer flag) {
+    public User(Long id, String username, String password, Integer userSex, String nickName, Timestamp cerateTime, Timestamp updateTime, Integer flag,String imgSrc) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -110,5 +110,6 @@ public class User {
         this.cerateTime = cerateTime;
         this.updateTime = updateTime;
         this.flag = flag;
+        this.imgSrc = imgSrc;
     }
 }

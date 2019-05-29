@@ -33,6 +33,18 @@ public class Task extends BaseEntity{
 
     private String userName;
 
+    public String getExecuteUserImgSrc() {
+        return executeUserImgSrc;
+    }
+
+    public String getExecuteUserName() {
+        return executeUserName;
+    }
+
+    private String executeUserImgSrc;
+
+    private String executeUserName;
+
     private int money;
 
     public int getMoney() {
@@ -158,4 +170,12 @@ public class Task extends BaseEntity{
     public Integer getTaskpattern(){ return  taskpattern;}
 
     public void  setTaskpattern(Integer taskpattern){this.taskpattern = taskpattern;}
+
+    public void setExecuteUserImgSrc(String executeUserImgSrc) {
+        this.executeUserImgSrc = executeUserImgSrc;
+    }
+
+    public void setExecuteUserName(String executeUserName) {
+        this.executeUserName = executeUserName;
+    }
 }

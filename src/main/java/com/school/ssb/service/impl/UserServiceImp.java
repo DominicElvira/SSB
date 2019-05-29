@@ -32,6 +32,12 @@ public class UserServiceImp implements UserService {
         return user;
     }
 
+    @Override
+    public User selectById(Long id) {
+        User user = userMapper.selectByPrimaryKey(id);
+        return user;
+    }
+
 
 
 
