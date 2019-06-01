@@ -28,4 +28,6 @@ public interface Taskservice {
     Task getTask(Long id);
 
     Map<String,Object> doTask(Task task);
+
+    Map<String, Object> publicTask(Task task);
 }

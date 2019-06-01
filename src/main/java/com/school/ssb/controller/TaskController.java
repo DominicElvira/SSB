@@ -97,4 +97,29 @@ public class TaskController {
         }
         return map;
     }
+
+
+    /**
+     *
+     * @Method : publicTask
+     * @Description :发布任务
+     * @param task : 
+     *`@return : java.util.Map<java.lang.String,java.lang.Object>
+     * @author : xk
+     * @CreateDate : 2019-05-30 00:22:56
+     *
+     */
+    @PostMapping(value = "/p/task")
+    public Map<String, Object> publicTask(@RequestBody Task task) {
+        Map<String, Object> result = new HashMap<>();
+        try {
+            task.setTaskStatus(1);
+            task.setTaskpattern(0);
+            result = taskService.publicTask(task);
+        } catch (Exception e) {
+            log.warn("publicTask", e);
+            result.put("api_status", "-1");
+        }
+        return result;
+    }
 }

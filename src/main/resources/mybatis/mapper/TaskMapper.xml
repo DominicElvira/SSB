@@ -57,6 +57,9 @@
       <if test="tasktype != null">
         tasktype,
       </if>
+        <if test="taskpattern != null">
+            taskpattern,
+        </if>
       <if test="contentPublic != null">
         content_public,
       </if>
@@ -84,6 +87,9 @@
       <if test="updateTime != null">
         update_time,
       </if>
+      <if test="money != null">
+            money,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -95,6 +101,9 @@
       <if test="tasktype != null">
         #{tasktype,jdbcType=INTEGER},
       </if>
+        <if test="taskpattern != null">
+            #{taskpattern,jdbcType=INTEGER},
+        </if>
       <if test="contentPublic != null">
         #{contentPublic,jdbcType=VARCHAR},
       </if>
@@ -122,8 +131,10 @@
       <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
-    </trim>
-  </insert>
+      <if test="money != null">
+            #{money,jdbcType=INTEGER},
+      </if>
+    </trim></insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.school.ssb.bean.Task">
     update tasks
     <set>

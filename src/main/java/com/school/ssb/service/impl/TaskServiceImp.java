@@ -66,4 +66,13 @@ public class TaskServiceImp implements Taskservice {
         }
         return map;
     }
+
+    @Override
+    public Map<String, Object> publicTask(Task task) {
+        Map<String, Object> map = new HashMap<>();
+        int result = taskMapper.insertSelective(task);
+        map.put("api_status", result);
+        return map;
+    }
+
 }
